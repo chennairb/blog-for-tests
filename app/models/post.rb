@@ -9,6 +9,10 @@ class Post < ActiveRecord::Base
     Post.where(id: Post.joins(:comments).select('posts.id'))
   end
 
+  def self.posts_about_rails
+    Post.where("title LIKE ?", '%rails%')
+  end
+
   def self.with_comment_count
     Post.select('posts.id, COUNT(posts.id) AS comment_count')
       .joins(:comments)
