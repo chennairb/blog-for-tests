@@ -39,6 +39,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rspec'
   gem 'spring-commands-rspec'
+  gem 'test-unit'
+
+  gem 'factory_girl_rails'
 end
 
 group :development do
